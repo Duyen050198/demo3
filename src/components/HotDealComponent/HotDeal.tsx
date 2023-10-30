@@ -1,5 +1,5 @@
 import styles from "./HotDeal.module.css";
-import ProductComponent from "./ProductComponent";
+import ProductComponent from "./productComponent.tsx";
 import { useEffect, useState } from "react";
 import BoltIcon from '@mui/icons-material/Bolt';
 
@@ -63,7 +63,7 @@ const HotDeals = () => {
               </div>
             </div>
           </div>
-          <ProductComponent /> 
+          <ProductComponent />
       {/* {timeRemaining.days + timeRemaining.hours + timeRemaining.minutes + timeRemaining.seconds >= 0 ? (
         <div>
           
@@ -71,7 +71,7 @@ const HotDeals = () => {
       ) : (
         <Empty />
       )} */}
-      
+
     </div>
   );
 }
