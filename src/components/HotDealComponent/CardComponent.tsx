@@ -11,6 +11,21 @@ const CardComponent = (props: any) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
   };
+
+  const __dotControllerStyle = (color) => {
+      return {
+          color: `${color}`,
+              outlineOffset: "5px",
+              background: `${color}`,
+              padding: "0.1px",
+              marginRight: "20px",
+              '&.Mui-checked': {
+              color: `${color}`,
+                  outline: `1px solid #333`,
+          },
+      }
+  }
+
   const controlProps = (item: string) => ({
     checked: selectedValue === item,
     onChange: handleChange,
@@ -47,34 +62,14 @@ const CardComponent = (props: any) => {
         <div className={styles.colorBtnWrapper}>
           <Radio
             {...controlProps('a')}
-            sx={{
-              color: `${props.colors[0]}`,
-              outlineOffset: "5px",
-              background: `${props.colors[0]}`,
-              padding: "0.1px",
-              marginRight: "20px",
-              '&.Mui-checked': {
-                color: `${props.colors[0]}`,
-                outline: `1px solid #333`,
-              },
-            }}
+            sx={__dotControllerStyle(props.colors[0])}
             onClick={() => setColorState(props.colors[0])}
           />
           
           {props.colors[1] && (
             <Radio
             {...controlProps('b')}
-            sx={{
-              color: `${props.colors[1]}`,
-              outlineOffset: "5px",
-              background: `${props.colors[1]}`,
-              padding: "0.1px",
-              marginRight: "20px",
-              '&.Mui-checked': {
-                color: `${props.colors[1]}`,
-                outline: `1px solid #333`,
-              },
-            }}
+            sx={__dotControllerStyle(props.colors[1])}
             onClick={() => setColorState(props.colors[1])}
           />
           )}
@@ -82,17 +77,7 @@ const CardComponent = (props: any) => {
           {props.colors[2] && (
             <Radio
             {...controlProps('c')}
-            sx={{
-              color: `${props.colors[2]}`,
-              outlineOffset: "5px",
-              background: `${props.colors[2]}`,
-              padding: "0.1px",
-              marginRight: "20px",
-              '&.Mui-checked': {
-                color: `${props.colors[2]}`,
-                outline: `1px solid #333`,
-              },
-            }}
+            sx={__dotControllerStyle(props.colors[2])}
             onClick={() => setColorState(props.colors[2])}
           />
           )}
@@ -100,17 +85,7 @@ const CardComponent = (props: any) => {
           {props.colors[3] && (
             <Radio
             {...controlProps('d')}
-            sx={{
-              color: `${props.colors[3]}`,
-              outlineOffset: "5px",
-              background: `${props.colors[3]}`,
-              padding: "0.1px",
-              marginRight: "20px",
-              '&.Mui-checked': {
-                color: `${props.colors[3]}`,
-                outline: `1px solid #333`,
-              },
-            }}
+            sx={__dotControllerStyle(props.colors[3])}
             onClick={() => setColorState(props.colors[3])}
           />
           )}
